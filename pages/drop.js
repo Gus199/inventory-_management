@@ -15,6 +15,7 @@ const techCompanies = [
 const App = () => (
     <form>
 
+        clear
          <div className="container">
     <div className="row">
       <div className="col-md-4"></div>

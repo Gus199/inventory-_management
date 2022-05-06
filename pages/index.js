@@ -19,6 +19,24 @@ const DUMMY_DEVICES = [
   },
 ];
 
-export default function HomePage() {
-  return <DeviceList devices={DUMMY_DEVICES} />;
+export default function HomePage({ devices }) {
+  console.log(devices)
+  return (<>
+
+   <h1>{devices.data[0].device_name}</h1>
+  <DeviceList devices={DUMMY_DEVICES} />;
+  </>
+  
+  )
+}
+
+
+export async function getStaticProps(context) {
+  const  res = await fetch('http://localhost:3000/api/devices')
+  const devices = await res.json()
+  return {
+    props: {
+      devices
+    }
+  }
 }

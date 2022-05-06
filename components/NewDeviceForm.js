@@ -1,26 +1,32 @@
 import { useRef } from 'react';
 
 import Card from './ui/Card';
-import classes from './NewDeviceForm.module.css'
+import classes from '.././styles/NewDeviceForm.module.css'
 
 function NewMeetupForm(props) {
   const titleInputRef = useRef();
-  const imageInputRef = useRef();
-  const addressInputRef = useRef();
+  const invnumInputRef = useRef();
+  const specsInputRef = useRef();
+  // const imageInputRef = useRef();
+  // const addressInputRef = useRef();
   const descriptionInputRef = useRef();
 
   function submitHandler(event) {
     event.preventDefault();
 
     const enteredDeviceName = titleInputRef.current.value;
-    const enteredImage = imageInputRef.current.value;
-    const enteredSpecs = addressInputRef.current.value;
+    const enterDeviceNumber = invnumInputRef.current.value;
+     const enteredSpecs = addressInputRef.current.value;
+    // const enteredImage = imageInputRef.current.value;
+    
     const enteredDescription = descriptionInputRef.current.value;
 
     const meetupData = {
+      invnum: enterDeviceNumber,
         device_name: enteredDeviceName,
-      image: enteredImage,
-      specs: enteredSpecs,
+        specs: enteredSpecs,
+      // image: enteredImage,
+      
       description: enteredDescription,
     };
 
@@ -30,17 +36,21 @@ function NewMeetupForm(props) {
   return (
     <Card>
       <form className={classes.form} onSubmit={submitHandler}>
+      <div className={classes.control}>
+          <label htmlFor='name'>Inventory Number</label>
+          <input type='text' required id='title' ref={invnumInputRef} />
+        </div>
         <div className={classes.control}>
           <label htmlFor='title'>Device Name</label>
           <input type='text' required id='title' ref={titleInputRef} />
         </div>
-        <div className={classes.control}>
+         {/* <div className={classes.control}>
           <label htmlFor='image'>Device Image</label>
           <input type='url' required id='image' ref={imageInputRef} />
-        </div>
+        </div> */}
         <div className={classes.control}>
-          <label htmlFor='address'>Specs</label>
-          <input type='text' required id='address' ref={addressInputRef} />
+          <label htmlFor='specs'>Specs</label>
+          <input type='text' required id='address' ref={specsInputRef} />
         </div>
         <div className={classes.control}>
           <label htmlFor='description'>Description</label>
@@ -52,7 +62,7 @@ function NewMeetupForm(props) {
           ></textarea>
         </div>
         <div className={classes.actions}>
-          <button>Add Meetup</button>
+          <button>Add Device</button>
         </div>
       </form>
     </Card>

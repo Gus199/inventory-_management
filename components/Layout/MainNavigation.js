@@ -8,12 +8,13 @@ function MainNavigation() {
       <div className={classes.logo}>Inventory Managments</div>
       <nav>
         <ul>
-          <li>
-            <Link href='/'>All Devices</Link>
+        <li>
+            <Link href='/devices/add'>Add New Device</Link>
           </li>
           <li>
-            <Link href='/new-meetup'>Add New Device</Link>
+            <Link href='/alldevices'>All Devices</Link>
           </li>
+         
         </ul>
       </nav>
     </header>

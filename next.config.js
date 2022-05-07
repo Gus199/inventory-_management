@@ -7,6 +7,7 @@
 
 module.exports = {
   env: {
-      MONGO_URI: "mongodb+srv://gus199:rootpass@cluster0.eoy6a.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+      MONGO_URI: "mongodb+srv://gus199:rootpass@cluster0.eoy6a.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+      JWT_SECRET:"abc1234"
   }
 }

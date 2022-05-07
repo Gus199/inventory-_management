@@ -5,7 +5,7 @@ function MainNavigation() {
 
   return (
     <header className={classes.header}>
-      <div className={classes.logo}>Inventory Managments</div>
+      <div className={classes.logo}><Link href='/'>Inventory Managments</Link></div>
       <nav>
         <ul>
         <li>
@@ -13,6 +13,9 @@ function MainNavigation() {
           </li>
           <li>
             <Link href='/alldevices'>All Devices</Link>
+          </li>
+          <li>
+            <Link href='/account/login'>login</Link>
           </li>
          
         </ul>
